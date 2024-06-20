@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"/>
+    <title>TodoList app</title>
+  </head>
+  <body class="bg-white transition-all">
+    <main class="min-h-screen dark:bg-VeryDarkBlue bg-VeryLightGray relative">
+      <div>
+        <img
+          src="images/bg-desktop-dark.jpg"
+          alt="desktop-bg"
+          class="hidden w-full h-64 object-cover object-left-top dark:md:block"
+        />
+        <img
+          src="images/bg-desktop-light.jpg"
+          alt="desktop-bg"
+          class="hidden w-full h-64 object-cover object-left-top dark:hidden md:block"
+        />
+        <img
+          src="images/bg-mobile-dark.jpg"
+          alt="mobile-bg"
+          class="w-full h-64 object-cover object-left-top hidden md:hidden dark:block dark:md:hidden"
+        />
+        <img
+          src="images/bg-mobile-light.jpg"
+          alt="mobile-bg"
+          class="w-full h-64 object-cover object-left-top dark:hidden md:hidden dark:md:hidden"
+        />
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center relative -top-40 -my-16 md:-my-14"
+      >
+        <header
+          class="w-full flex items-center justify-between px-10 md:w-6/12 lg:w-5/12"
+        >
+          <h1
+            class="text-white font-JosefinSans uppercase text-2xl tracking-widest font-semibold md:text-4xl"
+          >
+            todo
+          </h1>
+          <div>
+            <img
+              src="images/icon-moon.svg"
+              class="block dark:hidden theme-toggler cursor-pointer"
+              data-theme-toggler
+              alt=""
+            />
+            <img
+              src="images/icon-sun.svg"
+              class="hidden dark:block theme-toggler cursor-pointer"
+              data-theme-toggler
+              alt=""
+            />
+          </div>
+        </header>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center relative -top-5 md:-top-10"
+      >
+        <div
+          class="w-11/12 flex items-center space-x-4 py-5 px-4 bg-white dark:bg-VeryDarkDesaturatedBlue rounded-md md:w-6/12 lg:w-5/12 md:px-6 xl:w-4/12"
+        >
+          <button
+            class="w-4 h-4 ring-1 rounded-full ring-VeryLightGrayishBlue dark:ring-VeryDarkGrayishBlue"
+            id="addToList"
+          ></button>
+          <input
+            type="text"
+            placeholder="Create a new todo..."
+            id="todoInput"
+            class="font-JosefinSans w-full bg-transparent text-VeryDarkGrayishBlue focus:outline-none placeholder:text-LightGrayishBlue text-base font-medium"
+          />
+        </div>
+      </div>
+
+      <div>
+        <div
+          id="todo-list"
+          class="flex flex-col items-center justify-center relative -top-1 mb-8 md:mb-1 md:-top-6"
+        >
+          <div
+            class="wrapper w-11/12 md:w-6/12 lg:w-5/12 xl:w-4/12 shadow-xl"
+          ></div>
+        </div>
+        <div class="flex justify-center">
+          <div
+            class="w-11/12 flex shadow-xl items-center justify-between py-5 px-6 bg-white dark:bg-VeryDarkDesaturatedBlue rounded-es-lg rounded-ee-lg md:w-6/12 lg:w-5/12 md:space-x-5 xl:w-4/12"
+          >
+            <p
+              id="remainingItems"
+              class="text-DarkGrayishBlue1 text-sm font-medium font-JosefinSans"
+            >
+              5 items left
+            </p>
+            <div
+              class="hidden space-x-4 items-center md:flex font-JosefinSans xl:space-x-4 filter-btns"
+            >
+              <button class="text-sm text-blue-600" id="allItems">All</button>
+              <button class="text-DarkGrayishBlue1 text-sm" id="activeItems">
+                Actives
+              </button>
+              <button class="text-DarkGrayishBlue1 text-sm" id="completedItems">
+                Completed
+              </button>
+            </div>
+            <button
+              id="clearCompletedItems"
+              class="text-DarkGrayishBlue1 text-sm font-medium font-JosefinSans"
+            >
+              Clear completed
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center my-6">
+        <div
+          class="filter-btns font-JosefinSans flex justify-center space-x-6 rounded-lg bg-VeryLightGray dark:bg-VeryDarkDesaturatedBlue px-6 py-5 w-11/12 md:hidden"
+        >
+          <button class="text-blue-600 text-base font-bold" id="allItems">
+            All
+          </button>
+          <button
+            class="text-base font-bold text-DarkGrayishBlue1"
+            id="activeItems"
+          >
+            Active
+          </button>
+          <button
+            class="text-base font-bold text-DarkGrayishBlue1"
+            id="completedItems"
+          >
+            Completed
+          </button>
+        </div>
+      </div>
+
+      <p
+        class="text-DarkGrayishBlue1 dark:text-DarkGrayishBlue text-sm font-JosefinSans font-bold text-center my-10"
+      >
+        Drag and drop to reorder list
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
